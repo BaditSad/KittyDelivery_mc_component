@@ -1,2 +1,0 @@
-# KittyDelivery_Developer
-KittyDelivery_Developer
