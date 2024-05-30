@@ -1,9 +1,9 @@
-import HomePage from '@/components/HomePage.vue'
+import DevPage from '@/components/DevPage.vue'
 import axios from 'axios';
 export default {
-  name: 'HomePage',
+  name: 'DevPage',
   components: {
-    HomePage
+    DevPage
   }
   ,
   async created() {
