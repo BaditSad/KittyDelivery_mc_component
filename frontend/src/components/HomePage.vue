@@ -7,30 +7,13 @@
     <img class="title" src="../assets/title.png" alt="Kitty Delivery title" />
     <button class="profile_button">Profile</button>
   </header>
+      <h1 class="liste">Liste des composants disponibles :</h1>
   <div class="container">
     <div class="component-list">
-      <h1>Liste des composants disponibles</h1>
       <div class="component">
-        <div class="image-placeholder"></div>
+      <p>[Composant 1]</p>
         <button>Télécharger</button>
       </div>
-      <div class="component">
-        <div class="image-placeholder"></div>
-        <button>Télécharger</button>
-      </div>
-      <div class="component">
-        <div class="image-placeholder"></div>
-        <button>Télécharger</button>
-      </div>
-      <div class="component">
-        <div class="image-placeholder"></div>
-        <button>Télécharger</button>
-      </div>
-    </div>
-    <div class="profile">
-      <h1>Mon profil</h1>
-      <button>Modifier</button>
-      <button>Supprimer</button>
     </div>
   </div>
 </template>
