@@ -3,19 +3,31 @@
 
 <template>
   <header>
-    <img class="logo" src="../assets/logo.jpg" alt="Kitty Delivery logo" />
     <img class="title" src="../assets/title.png" alt="Kitty Delivery title" />
     <router-link to="/Dev">
-        <button class="profile_button">Profile</button>
+        <button class="back"> Retour </button>
     </router-link>
   </header>
-      <h1 class="liste">Liste des composants disponibles :</h1>
-  <div class="container">
-    <div class="component-list">
-      <div class="component">
-      <p>[Composant 1]</p>
-        <button>Télécharger</button>
-      </div>
-    </div>
+  <div class="container_profile">
+    <form class="form">
+        <h1>Votre profil Kitty</h1>
+        <label class="text">
+          <input disabled class="text" type="text" placeholder="Adresse email" value="default email" />
+        </label>
+        <label class="text">
+          <input class="text" type="password" placeholder="Mot de passe" value="default password" />
+        </label>
+        <label class="text">
+          <input class="text" type="password" placeholder="Vérification du mot de passe" value="default password" />
+        </label>
+        <div class="button-container">
+          <button class="button-update" type="button">
+            <i class="icon ion-md-lock"></i> Mettre à jour
+          </button>
+          <button class="button-delete" type="button">
+            <i class="icon ion-md-lock"></i> Supprimer compte
+          </button>
+        </div>
+      </form>
   </div>
 </template>
