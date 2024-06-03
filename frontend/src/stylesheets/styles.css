@@ -105,7 +105,7 @@ header {
 }
 
 .component button:hover {
-  border:2px solid #EE9180;
+  border: 2px solid #EE9180;
   background-color: #D35452;
   color: #EE9180;
 }
@@ -155,7 +155,8 @@ header {
 }
 
 .form {
-  width: 30%;
+  width: 90%;
+  max-width: 600px;
   background: #DDA476;
   border-radius: 30px;
   border: dashed #F9E4C4;
@@ -194,13 +195,13 @@ label.text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70%;
+  width: 100%;
 }
 
 .button-container {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 100%;
 }
 
 .button-login {
@@ -347,7 +348,7 @@ label.text {
 
 .button-delete:after {
   background-clip: padding-box;
-  background-color: #dd6f6d;
+  background-color: #EE9180;
   border-radius: 16px;
   border-width: 0 0 4px;
   content: "";
@@ -375,4 +376,55 @@ label.text {
 .button-delete:active {
   border-width: 4px 0 0;
   background: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header, .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title {
+    width: 40%;
+  }
+
+  .container {
+    margin: 2%;
+    height: auto;
+  }
+
+  .component {
+    flex-direction: column;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-login, .button-update, .button-delete {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    width: 50%;
+  }
+
+  button,
+  h1 {
+    font-size: 20px;
+  }
+
+  .profile_button,
+  .back {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .button-login, .button-update, .button-delete {
+    width: 100%;
+  }
 }
