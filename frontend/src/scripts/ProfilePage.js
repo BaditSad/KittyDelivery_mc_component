@@ -1,9 +1,8 @@
-// @ is an alias to /src
-import DevPage from '@/components/DevPage.vue'
+import ProfilePage from '@/components/ProfilePage.vue'
 
 export default {
-  name: 'DevPage',
+  name: 'ProfilePage',
   components: {
-    DevPage
+    ProfilePage
   }
 }
