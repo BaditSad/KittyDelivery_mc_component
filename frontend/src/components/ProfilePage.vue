@@ -24,6 +24,9 @@
           <button class="button-update" type="button">
             <i class="icon ion-md-lock"></i> Mettre à jour
           </button>
+          <button class="button-deco" type="button">
+            <i class="icon ion-md-lock"></i> Deconnexion
+          </button>
           <button class="button-delete" type="button">
             <i class="icon ion-md-lock"></i> Supprimer compte
           </button>
