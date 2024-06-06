@@ -1,14 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const mongoose = require("mongoose");
 module.exports = router;
 const Component = require("../models/component");
 
-router.get("/components", async (res) => {
+router.get("/", async (req, res) => {
   try {
     const components = await Component.find();
     if (!components) {
-      return res.status(404).json({ message: "Aucun composant trouvé !" });
+      return res.status(404).json({ message: "Components not found!" });
     }
     res.json(components);
   } catch (error) {
