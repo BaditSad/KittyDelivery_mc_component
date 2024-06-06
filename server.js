@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.use(cors());
 
@@ -27,4 +27,4 @@ app.use(bodyParser.json());
 
 app.use("/api", componentRouter);
 
-app.listen(port, () => console.log("app running on http://localhost:3000"));
+app.listen(port, () => console.log(`app running on http://localhost:${port}`));

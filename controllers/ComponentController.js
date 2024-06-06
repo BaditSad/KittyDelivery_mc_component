@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 module.exports = router;
 const Component = require("../models/component");
 
-router.get("/components", async (req, res) => {
+router.get("/components", async (res) => {
   try {
     const components = await Component.find();
     res.json(components);
