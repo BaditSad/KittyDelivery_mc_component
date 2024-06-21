@@ -14,82 +14,63 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/ComponentInput"
+                                "$ref": "#/components/schemas/Component"
+                            },
+                            "example": {
+                                "component_name": "Footer",
+                                "component_template": "<footer>{{ copyright }}</footer>"
                             }
                         }
                     }
                 },
                 "responses": {
                     "201": {
-                        "description": "Item posted"
+                        "description": "Component created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Component"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request body"
                     },
                     "500": {
-                        "description": "Internal server error"
+                        "description": "Server error"
                     }
                 }
             },
             "get": {
-                "summary": "Get all components",
-                "parameters": [
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "description": "Page number for pagination",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "example": 1
-                        }
-                    },
-                    {
-                        "name": "limit",
-                        "in": "query",
-                        "description": "Number of items per page",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "example": 10
-                        }
-                    }
-                ],
+                "summary": "Retrieve all components",
                 "responses": {
-                    "201": {
-                        "description": "Successful response",
+                    "200": {
+                        "description": "List of components",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "totalPages": {
-                                            "type": "integer",
-                                            "example": 2
-                                        },
-                                        "components": {
-                                            "type": "array",
-                                            "items": {
-                                                "$ref": "#/components/schemas/Component"
-                                            }
-                                        }
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Component"
                                     }
                                 }
                             }
                         }
                     },
                     "404": {
-                        "description": "Components not found"
+                        "description": "No components found"
                     },
                     "500": {
-                        "description": "Internal server error"
+                        "description": "Server error"
                     }
                 }
-            }
-        },
-        "/api/mc_component/{componentId}": {
-            "delete": {
-                "summary": "Delete a component by ID",
+            },
+            "put": {
+                "summary": "Update an existing component",
                 "parameters": [
                     {
-                        "name": "componentId",
+                        "name": "id",
                         "in": "path",
                         "required": true,
                         "schema": {
@@ -97,15 +78,39 @@
                         }
                     }
                 ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Component"
+                            },
+                            "example": {
+                                "component_name": "Updated Header",
+                                "component_template": "<header>{{ updated_title }}</header>"
+                            }
+                        }
+                    }
+                },
                 "responses": {
-                    "201": {
-                        "description": "Item deleted"
+                    "200": {
+                        "description": "Component updated successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Component"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request body or parameters"
                     },
                     "404": {
                         "description": "Component not found"
                     },
                     "500": {
-                        "description": "Internal server error"
+                        "description": "Server error"
                     }
                 }
             }
@@ -116,14 +121,20 @@
             "Component": {
                 "type": "object",
                 "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
                     "component_name": {
-                        "type": "string",
-                        "example": "Component Name"
+                        "type": "string"
                     },
                     "component_template": {
-                        "type": "string",
-                        "example": "<div>This is a component template</div>"
+                        "type": "string"
                     }
+                },
+                "example": {
+                    "_id": "609bdc1f1b155300152dcb2f",
+                    "component_name": "Header",
+                    "component_template": "<header>{{ title }}</header>"
                 }
             }
         }
